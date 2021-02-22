@@ -4,15 +4,15 @@
     <h1>Order Size Calculator</h1>
     <h2 style="margin-bottom:30px;">For Cross and Spot</h2>
 
-    <p class="plexy">Coin Balance (COIN OR USDT)</p>
+    <p class="plexy" title="Real Balance of base coin you own. Unleveraged, available asset.">Coin Balance (COIN OR USDT)</p>
     <input class="texy textbox" type="number" min="0" v-model="accountbalance" step="any">
-    <p class="plexy">Risk (SL %)</p>
+    <p class="plexy" title="The amount of your real balance that you want to lose if stoploss is hit.">Risk (SL %)</p>
     <input class="texy textbox" type="number" min="0" v-model="riskpercentage" step="any">
-    <p class="plexy">Entry</p>
+    <p class="plexy" title="The entry price of your order. Set it to near current if you want to enter soon. Possibly add this last if price is moving fast.">Entry</p>
     <input class="texy textbox" type="number" min="0" v-model="entryprice" step="any">
-    <p class="plexy">StopLoss</p>
+    <p class="plexy" title="The price level which invalidates your trade setup.">StopLoss</p>
     <input class="texy textbox" type="number" min="0" v-model="stoploss" step="any">
-    <p class="plexy">TakeProfit</p>
+    <p class="plexy" title="The target price to take profits from your order.">TakeProfit</p>
     <input class="texy textbox" type="number" min="0" v-model="takeprofit" step="any"><br>
     <button v-on:click="calc()" style="margin-top:20px;padding-left:20px;padding-right:20px;font-size:15px" class="button">Calculate</button>
     <h4 style="margin-top:22px;">{{inlineerror}}</h4>
