@@ -2,12 +2,14 @@
   "name": "ordersize",
   "description": "A Vue.js project",
   "version": "1.0.0",
+  "main": "index.html",
   "author": "peepopoggers <72892531+peepopoggers@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "doall": "cross-env NODE_ENV=production webpack --progress --hide-modules&&vue-cli-service serve",
     "serve": "vue-cli-service serve"
   },
   "dependencies": {
