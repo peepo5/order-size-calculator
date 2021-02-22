@@ -2,7 +2,6 @@
   "name": "ordersize",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "main": "index.html",
   "author": "peepopoggers <72892531+peepopoggers@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
