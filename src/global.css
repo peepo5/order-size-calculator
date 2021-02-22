@@ -1,0 +1,42 @@
+body, html {
+    background-color: #181714 !important;
+    font-family: Monaco, monospace;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h1,h2,h3,h4,h5,h6,p,small {
+    color: #e2e2e2;
+    margin: 0px;
+}
+
+a {
+    color: #42b983;
+}
+
+.textbox {
+    background-color: #181818;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Monaco, monospace;
+    font-size: 16px;
+    border: 1px solid #949494;
+}
+.textbox:hover {
+    background-color: #272727;
+}
+
+.button {
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    font-family: Monaco, monospace;
+    background-color: #1d1d1d;
+    border: 1px solid #949494;
+}
+.button:hover {
+    background-color: #2e2e2e;
+    cursor: pointer;
+}
