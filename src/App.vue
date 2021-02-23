@@ -4,6 +4,15 @@
     <h1>Order Size Calculator</h1>
     <h2 style="margin-bottom:30px;">For Cross and Spot</h2>
 
+    <label class="toggle-switchy" for="crosstoggle" data-style="rounded" data-size="sm" data-color="yellow" data-text="false" style="margin-bottom:15px;">
+      <label style="margin-right:10px">Spot</label>
+      <input checked type="checkbox" id="crosstoggle" ref="crosstogglerr" v-on:click="crosstoggle()">
+      <span class="toggle">
+          <span class="switch"></span>
+      </span>
+      <label style="margin-left:10px">Cross</label>
+    </label>
+
     <p class="plexy" title="Real Balance of base coin you own. Unleveraged, available asset.">Coin Balance (COIN OR USDT)</p>
     <input class="texy textbox" type="number" min="0" v-model="accountbalance" step="any">
     <p class="plexy" title="The amount of your real balance that you want to lose if stoploss is hit.">Risk (SL %)</p>
@@ -46,11 +55,19 @@ export default {
         this.resulted = positionSizeCalc([this.accountbalance, this.riskpercentage, this.entryprice, this.stoploss, this.takeprofit])
         if(this.resulted[1] == true){
           this.resulted[1] = 'Long'
+          this.inlineerror = '';
+          this.resolute = true
         }else{
           this.resulted[1] = 'Short'
+          if(!this.crosstoggler){
+            this.inlineerror = "You cannot open a short in spot."
+            this.resulted = []
+            this.resolute = false;
+          }else{
+            this.inlineerror = '';
+            this.resolute = true
+          }
         }
-        this.inlineerror = '';
-        this.resolute = true
       }catch(e){
         this.inlineerror = "Please make sure params are valid."
         this.resulted = []
@@ -59,6 +76,9 @@ export default {
     },
     copyresult (varr) {
       navigator.clipboard.writeText(varr)
+    },
+    crosstoggle () {
+      this.crosstoggler = this.$refs.crosstogglerr.checked
     }
   },
   mounted () {
@@ -74,7 +94,9 @@ export default {
       inlineerror: '',
 
       resulted: [],
-      resolute: false
+      resolute: false,
+
+      crosstoggler: true
     }
   }
 }
