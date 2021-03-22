@@ -15,8 +15,8 @@
 
     <p class="plexy" title="Real Balance of base coin you own. Unleveraged, available asset.">Coin Balance (COIN OR USDT)</p>
     <input class="texy textbox" type="number" min="0" v-model="accountbalance" step="any" title="Real Balance of base coin you own. Unleveraged, available asset.">
-    <p class="plexy" title="The amount of your real balance that you want to lose if stoploss is hit.">Risk (SL %)</p>
-    <input class="texy textbox" type="number" min="0" v-model="riskpercentage" step="any" title="The amount of your real balance that you want to lose if stoploss is hit.">
+    <p class="plexy" title="The percentage of your real balance that you want to lose if stoploss is hit.">Risk (SL %)</p>
+    <input class="texy textbox" type="number" min="0" v-model="riskpercentage" step="any" title="The percentage of your real balance that you want to lose if stoploss is hit.">
     <p class="plexy" title="The entry price of your order. Set it to near current if you want to enter soon. Possibly add this last if price is moving fast.">Entry</p>
     <input class="texy textbox" type="number" min="0" v-model="entryprice" step="any" title="The entry price of your order. Set it to near current if you want to enter soon. Possibly add this last if price is moving fast.">
     <p class="plexy" title="The price level which invalidates your trade setup.">StopLoss</p>
