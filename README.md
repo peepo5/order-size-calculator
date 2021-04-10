@@ -3,6 +3,8 @@
 A Vue.js project created to calculate ordersize for crypto exchanges.
 The project takes into account risk, entry, orderize, stop-loss and take-profit to calculate the needed position size for a % loss when SL is hit.
 
+A small and not very refactored test project for vue.
+
 [Official Site](https://osc.vercel.app)
 
 ## Build Setup
