@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <img style="width:100px;" src="https://logo-logos.com/wp-content/uploads/2018/02/bitcoin_2.png">
+    <img style="width:100px;" src="love.png">
     <h1>Order Size Calculatorr</h1>
     <h2 style="margin-bottom:30px;">For Cross and Spot</h2>
 
