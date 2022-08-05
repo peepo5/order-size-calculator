@@ -13,7 +13,7 @@
       <label style="margin-left:10px">Cross</label>
     </label>
 
-    <p class="plexy" title="Real Balance of base coin you own. Unleveraged, available asset.">Coin Balance (COIN OR USDT)</p>
+    <p class="plexy" title="Real Balance of base coin you own. Unleveraged, available asset.">Coin Balance (COIN OR USD)</p>
     <input class="texy textbox" type="number" min="0" v-model="accountbalance" step="any" title="Real Balance of base coin you own. Unleveraged, available asset.">
     <p class="plexy" title="The percentage of your real balance that you want to lose if stoploss is hit.">Risk (SL %)</p>
     <input class="texy textbox" type="number" min="0" v-model="riskpercentage" step="any" title="The percentage of your real balance that you want to lose if stoploss is hit.">
