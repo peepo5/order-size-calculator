@@ -33,10 +33,10 @@
       <div class="grid-item grid-header">Type</div>
       <div class="grid-item grid-header">TPSL Ratio</div>
       <div class="grid-item grid-header">TP Gain</div>
-      <div class="grid-item" v-on:click="copyresult(resulted[0])">{{resulted[0]}}</div>
-      <div class="grid-item" v-on:click="copyresult(resulted[1])">{{resulted[1]}}</div>
-      <div class="grid-item" v-on:click="copyresult(resulted[2]+'R')">{{resulted[2]}}R</div>
-      <div class="grid-item" v-on:click="copyresult(resulted[3]+'%')">{{resulted[3]}}%</div>
+      <div class="grid-item" title="Click to copy" v-on:click="copyresult(resulted[0])">{{resulted[0]}}</div>
+      <div class="grid-item" title="Click to copy" v-on:click="copyresult(resulted[1])">{{resulted[1]}}</div>
+      <div class="grid-item" title="Click to copy" v-on:click="copyresult(resulted[2]+'R')">{{resulted[2]}}R</div>
+      <div class="grid-item" title="Click to copy" v-on:click="copyresult(resulted[3]+'%')">{{resulted[3]}}%</div>
     </div>
     </center>
     <small>Click to copy results</small>
@@ -51,6 +51,8 @@ export default {
   name: 'HelloWorld',
   methods: {
     calc () {
+      localStorage.setItem("account_balance", this.accountbalance);
+      localStorage.setItem("risk_percentage", this.risk_percentage);
       try{
         this.resulted = positionSizeCalc([this.accountbalance, this.riskpercentage, this.entryprice, this.stoploss, this.takeprofit])
         if(this.resulted[1] == true){
@@ -85,9 +87,23 @@ export default {
     //
   },
   data () {
+    let ls_account_balance = localStorage.getItem("account_balance");
+    let ls_risk_percentage = localStorage.getItem("risk_percentage");
+
+    let acc_bal = '';
+    let risk_perc = '';
+
+    if(ls_account_balance != undefined){
+      acc_bal = ls_account_balance;
+    }
+
+    if(ls_risk_percentage != undefined){
+      risk_perc = ls_risk_percentage;
+    }
+
     return {
-      accountbalance: '',
-      riskpercentage: '',
+      accountbalance: acc_bal,
+      riskpercentage: risk_perc,
       entryprice: '',
       stoploss: '',
       takeprofit: '',
